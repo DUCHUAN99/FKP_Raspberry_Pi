@@ -1,0 +1,23 @@
+Tôi đang dùng Pi 3B+, Camera V2
+Hệ điều hành thì tải bản 05/02/2020 raspbian-buster
+Vào trang web này để tải : https://distrowatch.com/?newsid=11392
+Lưu ý nếu tải bản cao và mới nhất thì sẽ ko dùng được thư viện picamera, và 1 số thư viện khác cũng lỗi )
+Một số hướng dẫn tải thư viện như sau:
+sudo apt-get update
+sudo apt-get upgrade – để cập nhật các phụ thuộc
+sudo apt install python3-opencv
+sudo apt install python3-scipy
+hoặc cũng có thể thử
+sudo pip3 install
+Thư viện picamera tự động có sẵn khi cài hệ điều hành như trên
+ROI_Colection – thu thập ảnh ROI
+FeatureExtracion_Alldata – trích xuất đặc trưng tất cả ảnh ROI  rồi đưa vào file pickle
+ROI_FeatureExtraction – Trích xuất ROI + trích xuất đặc trưng rồi đưa tiếp vào file pickle (dung trong trường hợp lượng data lớn vài tram người mà muốn thêm 1 người mới vào trong tập data thì dùng file này đỡ phải chạy lại tất cả => tốn thời gian)
+Matching  - Chụp 1 ảnh rồi trích xuất ROI + Trích xuất đặc trưng + so sánh với tất cả các ảnh trong tập data . Kết quả sẽ được Distance_Min . Dựa vào đó ta xác định được đó là người nào trong tập data hoặc nếu Distance_Min lớn hơn 1 ngưỡng mình đặt ra thì sẽ ko phải người trong tập dữ liệu, trường hợp nữa là ko phải ảnh khớp ngón tay thì sẽ là nothing
+
+
+
+
+
+
+
